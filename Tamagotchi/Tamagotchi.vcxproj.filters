@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Resource Files\Food Animation">
+      <UniqueIdentifier>{6d955e4d-02da-40c7-9dbe-a39b1d7038eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\cat">
+      <UniqueIdentifier>{a46d08d0-3129-4d68-a63b-b7bc1848cfdc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\dinosaur">
+      <UniqueIdentifier>{4163cbb8-ea8f-41d6-b68f-19679ee5aed4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Pet Headers">
+      <UniqueIdentifier>{b5a810fe-bc8f-4956-9606-c3b8b391460b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Pet cpp">
+      <UniqueIdentifier>{403b7a5e-d807-4eb7-a309-77ae7fa61082}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Menu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SaveData.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Pet.cpp">
+      <Filter>Source Files\Pet cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Cat.cpp">
+      <Filter>Source Files\Pet cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="MiniDino.cpp">
+      <Filter>Source Files\Pet cpp</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Menu.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SaveData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Cat.h">
+      <Filter>Header Files\Pet Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="MiniDino.h">
+      <Filter>Header Files\Pet Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Pet.h">
+      <Filter>Header Files\Pet Headers</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="savefile.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="food.txt">
+      <Filter>Resource Files\Food Animation</Filter>
+    </Text>
+    <Text Include="chomp.txt">
+      <Filter>Resource Files\Food Animation</Filter>
+    </Text>
+    <Text Include="eatenfood.txt">
+      <Filter>Resource Files\Food Animation</Filter>
+    </Text>
+    <Text Include="yum.txt">
+      <Filter>Resource Files\Food Animation</Filter>
+    </Text>
+    <Text Include="cat.txt">
+      <Filter>Resource Files\cat</Filter>
+    </Text>
+    <Text Include="catsleep.txt">
+      <Filter>Resource Files\cat</Filter>
+    </Text>
+    <Text Include="dancingcat.txt">
+      <Filter>Resource Files\cat</Filter>
+    </Text>
+    <Text Include="dinoplay.txt">
+      <Filter>Resource Files\dinosaur</Filter>
+    </Text>
+    <Text Include="dinosaur.txt">
+      <Filter>Resource Files\dinosaur</Filter>
+    </Text>
+    <Text Include="catsleep2.txt">
+      <Filter>Resource Files\cat</Filter>
+    </Text>
+    <Text Include="catsleep3.txt">
+      <Filter>Resource Files\cat</Filter>
+    </Text>
+  </ItemGroup>
+</Project>
