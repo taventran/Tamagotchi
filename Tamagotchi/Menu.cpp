@@ -1,7 +1,7 @@
 #include "Menu.h"
-#include <stdlib.h>
 
-Pet* newPet(string name) {
+
+Pet* newPet(string name, vector<Pet*>& saves) {
 	cout << "There are three pets to choose from:" << endl;
 	cout << "1. Mini Dino" << endl;
 	cout << "2. Cat" << endl;
@@ -28,14 +28,14 @@ Pet* newPet(string name) {
 	case 1: 
 	{
 		MiniDino* newDino = new MiniDino(userInput);
-		newDino->saveInfo();
+		saveInfo(newDino, saves);
 		return newDino;
 		break;
 	}
 	case 2: 
 	{
 		Cat* newCat = new Cat(userInput);
-		newCat->saveInfo();
+		saveInfo(newCat, saves);
 		return newCat;
 		break;
 	}
@@ -47,7 +47,7 @@ Pet* newPet(string name) {
 	}
 }
 
-Pet* displayMenu(const vector<Pet*>& saves) {
+Pet* displayMenu(vector<Pet*>& saves) {
 	if (saves.size() >= 1) {
 		cout << "Type in pet name to load in pet!" << endl;
 		for (unsigned int i = 0; i < saves.size(); i++) {
@@ -65,7 +65,7 @@ Pet* displayMenu(const vector<Pet*>& saves) {
 	cin >> userInput;
 
 	if (userInput == "new") {
-			Pet* freshPet = newPet(userInput);
+			Pet* freshPet = newPet(userInput, saves);
 			system("CLS");
 			return freshPet;
 	}

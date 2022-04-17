@@ -1,5 +1,20 @@
 #include "SaveData.h"
 
+void saveInfo(Pet* newPet, vector<Pet*>& saves) {
+	ofstream saveFile;
+	saveFile.open("savefile.txt", fstream::app);
+	saveFile << newPet->getBreed() << endl;
+	saveFile << newPet->getName() << endl;
+	saveFile << newPet->getHunger() << endl;
+	saveFile << newPet->getWeight() << endl;
+	saveFile << newPet->getHeight() << endl;
+	saveFile << newPet->getBoredomLevels() << endl;
+	saveFile << newPet->getSleepiness() << endl;
+	saveFile << endl;
+	saveFile.close();
+	saves.push_back(newPet);
+}
+
 void saveInformation(vector<string>& data) {
 	// Loads information from savefile to this vector
 	ifstream saveFile("savefile.txt");
@@ -13,6 +28,21 @@ void saveInformation(vector<string>& data) {
 			data.push_back(info);
 		}
 	}
+}
+
+void overWriteSaveFile(vector<Pet*>& saves) {
+	ofstream saveFile("savefile.txt");
+	for (unsigned int i = 0; i < saves.size(); i++) {
+		saveFile << saves.at(i)->getBreed() << endl;
+		saveFile << saves.at(i)->getName() << endl;
+		saveFile << saves.at(i)->getHunger() << endl;
+		saveFile << saves.at(i)->getWeight() << endl;
+		saveFile << saves.at(i)->getHeight() << endl;
+		saveFile << saves.at(i)->getBoredomLevels() << endl;
+		saveFile << saves.at(i)->getSleepiness() << endl;
+		saveFile << endl;
+	}
+	saveFile.close();
 }
 
 void loadInPet(pet p, vector<Pet*>& saves) {
@@ -34,7 +64,7 @@ void loadInPet(pet p, vector<Pet*>& saves) {
 	}
 }
 
-void getSavedPets(vector<Pet*>& saves, const vector<string>& data) {
+void getSavedPets(vector<Pet*>& saves, vector<string>& data) {
 	// Loads information from string vector and initializes all pets previously made into the Pet pointer vector
 	pet petInfo;
 	int num = 0;

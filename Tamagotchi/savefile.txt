@@ -9,24 +9,8 @@ Coco
 Mini Dino
 dinny
 0
-31
-29
-0
-0
-
-Mini Dino
-dinny2
-50
-45
-31
-0
-0
-
-Cat
-cat
-0
-26
-20
+47
+28
 0
 0
 

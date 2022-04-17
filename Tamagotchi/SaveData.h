@@ -1,7 +1,6 @@
 #pragma once
 #include "MiniDino.h"
 #include "Cat.h"
-#include <vector>
 
 struct pet {
 	string breed = "Cat";
@@ -17,5 +16,8 @@ void saveInformation(vector<string>& data);
 
 void loadInPet(pet p, vector<Pet*>& saves);
 
-void getSavedPets(vector<Pet*>& saves, const vector<string>& data);
+void getSavedPets(vector<Pet*>& saves, vector<string>& data);
 
+void overWriteSaveFile(vector<Pet*>& saves);
+
+void saveInfo(Pet* newPet, vector<Pet*>& saves);

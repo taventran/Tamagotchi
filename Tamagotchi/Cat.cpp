@@ -110,7 +110,7 @@ void Cat::sleep() {
 	Sleep(800);
 	system("CLS");
 	sleepiness = 0;
-	cout << "They are no longer tired" << endl;
+	cout << name << " are no longer tired" << endl;
 	addBoredom(40);
 	addHunger(30);
 }

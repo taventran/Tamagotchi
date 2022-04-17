@@ -9,6 +9,7 @@
 #include <sstream>
 #include <windows.h> // Need sleep function to allow animation to work
 #include <stdlib.h> // Need this to clear console
+#include <vector>
 
 using namespace std;
 
@@ -26,14 +27,32 @@ class Pet {
 		void addBoredom(int num);
 		void reduceSleepiness();
 		void addSleepiness(int num);
-		void saveInfo();
 		void foodAnimation();
+
+
+
 		string getName() {
 			return name;
 		}
 		string getBreed() {
 			return breed;
 		}
+		int getHunger() {
+			return hunger;
+		}
+		int getWeight() {
+			return weight;
+		}
+		int getHeight() {
+			return height;
+		}
+		int getBoredomLevels() {
+			return boredomLevels;
+		}
+		int getSleepiness() {
+			return sleepiness;
+		}
+
 	protected:
 		string breed;
 		string name;

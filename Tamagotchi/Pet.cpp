@@ -1,6 +1,5 @@
 #include "Pet.h"
 
-
 void Pet::reduceHunger(int num) {
 	hunger -= num;
 }
@@ -24,19 +23,6 @@ void Pet::addSleepiness(int num) {
 	sleepiness += num;
 }
 
-void Pet::saveInfo() {
-	ofstream saveFile;
-	saveFile.open("savefile.txt", fstream::app);
-	saveFile << breed << endl;
-	saveFile << name << endl;
-	saveFile << hunger << endl;
-	saveFile << weight << endl;
-	saveFile << height << endl;
-	saveFile << boredomLevels << endl;
-	saveFile << sleepiness << endl;
-	saveFile << endl;
-	saveFile.close();
-}
 
 void Pet::foodAnimation() {
 	/*The way I implemented this function will only allow Windows users to use this function since I used the Sleep function*/
