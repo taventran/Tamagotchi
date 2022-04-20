@@ -13,6 +13,8 @@ class Cat : public Pet {
 		void play();
 		void feed();
 		void sleep();
+
+
 };
 
 

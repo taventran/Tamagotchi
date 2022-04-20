@@ -103,5 +103,17 @@
     <Text Include="catsleep3.txt">
       <Filter>Resource Files\cat</Filter>
     </Text>
+    <Text Include="catplay.txt">
+      <Filter>Resource Files\cat</Filter>
+    </Text>
+    <Text Include="dinosaursleep.txt">
+      <Filter>Resource Files\dinosaur</Filter>
+    </Text>
+    <Text Include="dinosaursleep2.txt">
+      <Filter>Resource Files\dinosaur</Filter>
+    </Text>
+    <Text Include="dinosaursleep3.txt">
+      <Filter>Resource Files\dinosaur</Filter>
+    </Text>
   </ItemGroup>
 </Project>

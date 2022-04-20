@@ -10,11 +10,6 @@ int main() {
 	vector<Pet*> savedPets;
 	saveInformation(petData);
 	getSavedPets(savedPets, petData);
-	/*
-	for (unsigned int i = 0; i < savedPets.size(); i++) {
-		savedPets.at(i)->getStats(); // Used to test the save feature
-	}
-	*/
 	
 	Pet* currentPet = displayMenu(savedPets);
 
@@ -22,10 +17,7 @@ int main() {
 		cout << flush;
 		system("CLS");
 		Sleep(500);
-		for (unsigned int i = 0; i < savedPets.size(); i++) {
-			savedPets.at(i)->getStats(); // Used to test the save feature
-		}
-		overWriteSaveFile(savedPets);
+		overWriteSaveFile(savedPets, currentPet);
 		playMenu(currentPet);
 	}
 

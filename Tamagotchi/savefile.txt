@@ -1,16 +1,45 @@
 Cat
-Coco
-0
+floopy
+135
 23
-19
+25
+10
+20
+0
+
+Mini Dino
+Dinny
+114
+41
+28
+150
 0
 0
 
 Mini Dino
-dinny
-0
-47
+sdf
+210
+42
 28
+110
+0
+0
+
+Mini Dino
+dinny3
+50
+41
+30
+20
+5
+0
+
+Cat
+catty4
+20
+36
+24
+20
 0
 0
 

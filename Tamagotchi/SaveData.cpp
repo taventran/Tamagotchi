@@ -10,6 +10,7 @@ void saveInfo(Pet* newPet, vector<Pet*>& saves) {
 	saveFile << newPet->getHeight() << endl;
 	saveFile << newPet->getBoredomLevels() << endl;
 	saveFile << newPet->getSleepiness() << endl;
+	saveFile << newPet->getDead() << endl;
 	saveFile << endl;
 	saveFile.close();
 	saves.push_back(newPet);
@@ -30,7 +31,7 @@ void saveInformation(vector<string>& data) {
 	}
 }
 
-void overWriteSaveFile(vector<Pet*>& saves) {
+void overWriteSaveFile(vector<Pet*>& saves, Pet* currentPet) {
 	ofstream saveFile("savefile.txt");
 	for (unsigned int i = 0; i < saves.size(); i++) {
 		saveFile << saves.at(i)->getBreed() << endl;
@@ -40,9 +41,11 @@ void overWriteSaveFile(vector<Pet*>& saves) {
 		saveFile << saves.at(i)->getHeight() << endl;
 		saveFile << saves.at(i)->getBoredomLevels() << endl;
 		saveFile << saves.at(i)->getSleepiness() << endl;
+		saveFile << saves.at(i)->getDead() << endl;
 		saveFile << endl;
 	}
 	saveFile.close();
+	currentPet->isNeglected();
 }
 
 void loadInPet(pet p, vector<Pet*>& saves) {
@@ -87,7 +90,11 @@ void getSavedPets(vector<Pet*>& saves, vector<string>& data) {
 		num += 1;
 		stringstream sleepiness(data.at(num));
 		sleepiness >> petInfo.sleepiness;
+		num += 1;
+		stringstream dead(data.at(num));
+		dead >> petInfo.dead;
 		num += 2;
 		loadInPet(petInfo, saves);
+
 	}
 }

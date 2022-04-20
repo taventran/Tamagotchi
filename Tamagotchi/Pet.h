@@ -21,7 +21,6 @@ class Pet {
 		virtual void play() = 0; 
 		virtual void feed() = 0;
 		virtual void sleep() = 0;
-		void reduceHunger(int num);
 		void addHunger(int num);
 		void reduceBoredom(int num);
 		void addBoredom(int num);
@@ -29,6 +28,20 @@ class Pet {
 		void addSleepiness(int num);
 		void foodAnimation();
 
+
+		void isNeglected();
+
+		void gone() {
+			if (boredomLevels > maximumBoredomLevels) {
+				cout << "Pet ran away because it was bored hope " << name << " is doing okay." << endl;
+			}
+			else if (sleepiness > maximumSleepinessLevels) {
+				cout << "Pet died from lack of sleep rest in peace " << name << endl;
+			}
+			else if (dead) {
+				cout << "Pet died of starvation already rest in peace " << name << endl;
+			}
+		}
 
 
 		string getName() {
@@ -52,15 +65,26 @@ class Pet {
 		int getSleepiness() {
 			return sleepiness;
 		}
+		int getMaximumBoredomLevels() {
+			return maximumBoredomLevels;
+		}
+
+		bool getDead() {
+			return dead;
+		}
 
 	protected:
 		string breed;
 		string name;
+		int maximumHungerLevels;
+		int maximumBoredomLevels = 100;
+		int maximumSleepinessLevels;
 		int hunger = 0;
 		int weight = 0;
 		int height = 0;
 		int boredomLevels = 0;
 		int sleepiness = 0;
+		bool dead;
 };
 
 #endif

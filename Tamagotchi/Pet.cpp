@@ -1,10 +1,9 @@
 #include "Pet.h"
+#include <cmath>
 
-void Pet::reduceHunger(int num) {
-	hunger -= num;
-}
-void Pet::addHunger(int num) {
-	hunger += num;
+
+void Pet::addHunger(int weight) {
+	hunger += weight;
 }
 
 void Pet::reduceBoredom(int num) {
@@ -22,7 +21,23 @@ void Pet::reduceSleepiness() {
 void Pet::addSleepiness(int num) {
 	sleepiness += num;
 }
-
+void Pet::isNeglected() {
+	if (hunger > maximumHungerLevels) {
+		dead = true;
+		cout << "Your pet died because it was under fed!" << endl << endl;
+		exit(2);
+	}
+	if (sleepiness > maximumSleepinessLevels) {
+		dead = true;
+		cout << "Your pet died from lack of sleep!" << endl << endl;
+		exit(2);
+	}
+	if (boredomLevels > maximumBoredomLevels) {
+		dead = true;
+		cout << "Your pet ran away because you were boring." << endl << endl;
+		exit(2);
+	}
+}
 
 void Pet::foodAnimation() {
 	/*The way I implemented this function will only allow Windows users to use this function since I used the Sleep function*/

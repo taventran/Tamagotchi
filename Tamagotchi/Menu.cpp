@@ -72,6 +72,9 @@ Pet* displayMenu(vector<Pet*>& saves) {
 	else {
 		for (unsigned int i = 0; i < saves.size(); i++) {
 			if (userInput == saves.at(i)->getName()) {
+				if (saves.at(i)->getDead()) {
+					saves.at(i)->gone();
+				}
 				system("CLS");
 				return saves.at(i);
 			}
@@ -142,6 +145,4 @@ void playMenu(Pet* currentPet) {
 		break;
 	}
 	}
-
-
 }

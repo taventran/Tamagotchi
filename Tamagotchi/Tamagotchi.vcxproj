@@ -162,9 +162,13 @@
     <Text Include="dancingcat.txt" />
     <Text Include="dinoplay.txt" />
     <Text Include="dinosaur.txt" />
+    <Text Include="dinosaursleep.txt" />
+    <Text Include="dinosaursleep2.txt" />
+    <Text Include="dinosaursleep3.txt" />
     <Text Include="eatenfood.txt" />
     <Text Include="food.txt" />
     <Text Include="savefile.txt" />
+    <Text Include="catplay.txt" />
     <Text Include="yum.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
