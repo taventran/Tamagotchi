@@ -1,6 +1,5 @@
 #include "Menu.h"
 
-
 Pet* newPet(string name, vector<Pet*>& saves) {
 	cout << "There are three pets to choose from:" << endl;
 	cout << "1. Mini Dino" << endl;
@@ -41,19 +40,25 @@ Pet* newPet(string name, vector<Pet*>& saves) {
 	}
 	case 3:
 	{
-		// TODO: Make a frog pet
+		Frog* newFrog = new Frog(userInput);
+		saveInfo(newFrog, saves);
+		return newFrog;
 		break;
 	}
 	}
+	return new Frog("ERROR"); // Returns this frog if something goes wrong
 }
 
 Pet* displayMenu(vector<Pet*>& saves) {
+	cout << flush;
+	system("CLS");
 	if (saves.size() >= 1) {
 		cout << "Type in pet name to load in pet!" << endl;
 		for (unsigned int i = 0; i < saves.size(); i++) {
 			cout << "* Breed: " << saves.at(i)->getBreed() << " | Name: " << saves.at(i)->getName() << " *" << endl;
 		}
 		cout << endl << endl;
+		cout << "* Type in \"graveyard\" to see the graveyard of dead pets *" << endl;
 		cout << "* Or... type in \"new\" to create a new pet! *" << endl;
 		cout << "Type here: ";
 	}
@@ -63,11 +68,15 @@ Pet* displayMenu(vector<Pet*>& saves) {
 	}
 	string userInput;
 	cin >> userInput;
-
 	if (userInput == "new") {
 			Pet* freshPet = newPet(userInput, saves);
 			system("CLS");
 			return freshPet;
+	}
+	else if (userInput == "graveyard") {
+		graveYard(saves);
+		cin >> userInput;
+		displayMenu(saves);
 	}
 	else {
 		for (unsigned int i = 0; i < saves.size(); i++) {
@@ -79,6 +88,9 @@ Pet* displayMenu(vector<Pet*>& saves) {
 				return saves.at(i);
 			}
 		}
+		cout << "Invalid option input any button and click enter to try again" << endl;
+		cin >> userInput;
+		displayMenu(saves);
 
 	}
 
@@ -145,4 +157,33 @@ void playMenu(Pet* currentPet) {
 		break;
 	}
 	}
+}
+
+void graveYard(vector<Pet*>& saves) {
+	cout << setfill(' ') << setw(21);
+	cout << "GRAVEYARD" << endl;
+	cout << setfill('|') << setw(40);
+	cout << " " << endl;
+	cout << endl << endl;
+	int deadCount = 0;
+	for (unsigned int i = 0; i < saves.size(); i++) {
+		if (saves.at(i)->getDead()) {
+			deadCount += 1;
+		}
+	}
+	if (deadCount > 0) {
+		for (unsigned int i = 0; i < saves.size(); i++) {
+			if (saves.at(i)->getDead()) {
+				cout << "REST IN PEACE " << saves.at(i)->getName() << endl << endl;
+			}
+		}
+		cout << "You killed " << deadCount << " pet/s with your negligence hope you're happy monster!!" << endl << endl;
+	}
+	else {
+		cout << "All pets are alive and healthy!" << endl << endl;
+	}
+
+	cout << setfill('|') << setw(40);
+	cout << " " << endl;
+	cout << endl << endl;
 }

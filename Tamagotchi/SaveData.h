@@ -1,6 +1,7 @@
 #pragma once
 #include "MiniDino.h"
 #include "Cat.h"
+#include "Frog.h"
 
 struct pet {
 	string breed = "Cat";

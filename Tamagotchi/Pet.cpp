@@ -21,22 +21,21 @@ void Pet::reduceSleepiness() {
 void Pet::addSleepiness(int num) {
 	sleepiness += num;
 }
-void Pet::isNeglected() {
+
+bool Pet::isNeglected() {
 	if (hunger > maximumHungerLevels) {
 		dead = true;
 		cout << "Your pet died because it was under fed!" << endl << endl;
-		exit(2);
 	}
 	if (sleepiness > maximumSleepinessLevels) {
 		dead = true;
 		cout << "Your pet died from lack of sleep!" << endl << endl;
-		exit(2);
 	}
 	if (boredomLevels > maximumBoredomLevels) {
 		dead = true;
 		cout << "Your pet ran away because you were boring." << endl << endl;
-		exit(2);
 	}
+	return dead;
 }
 
 void Pet::foodAnimation() {

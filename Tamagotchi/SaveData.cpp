@@ -41,25 +41,47 @@ void overWriteSaveFile(vector<Pet*>& saves, Pet* currentPet) {
 		saveFile << saves.at(i)->getHeight() << endl;
 		saveFile << saves.at(i)->getBoredomLevels() << endl;
 		saveFile << saves.at(i)->getSleepiness() << endl;
+		cout << saves.at(i)->getDead() << endl;
 		saveFile << saves.at(i)->getDead() << endl;
 		saveFile << endl;
 	}
 	saveFile.close();
-	currentPet->isNeglected();
+	if (currentPet->isNeglected()) {
+		for (unsigned int i = 0; i < saves.size(); i++) {
+			if (currentPet->getName() == saves.at(i)->getName()) {
+				saves.at(i)->setDead();
+			}
+		}
+		ofstream saveFile("savefile.txt");
+		for (unsigned int i = 0; i < saves.size(); i++) {
+			saveFile << saves.at(i)->getBreed() << endl;
+			saveFile << saves.at(i)->getName() << endl;
+			saveFile << saves.at(i)->getHunger() << endl;
+			saveFile << saves.at(i)->getWeight() << endl;
+			saveFile << saves.at(i)->getHeight() << endl;
+			saveFile << saves.at(i)->getBoredomLevels() << endl;
+			saveFile << saves.at(i)->getSleepiness() << endl;
+			saveFile << saves.at(i)->getDead() << endl;
+			saveFile << endl;
+		}
+		saveFile.close();
+		exit(2);
+	}
 }
 
 void loadInPet(pet p, vector<Pet*>& saves) {
 	// Initializes pet based on the breed
 	if (p.breed == "Mini Dino") {
-		MiniDino* dino = new MiniDino(p.name, p.hunger, p.weight, p.height, p.boredom, p.sleepiness);
+		MiniDino* dino = new MiniDino(p.name, p.hunger, p.weight, p.height, p.boredom, p.sleepiness, p.dead);
 		saves.push_back(dino);
 	}
 	else if (p.breed == "Cat") {
-		Cat* cat = new Cat(p.name, p.hunger, p.weight, p.height, p.boredom, p.sleepiness);
+		Cat* cat = new Cat(p.name, p.hunger, p.weight, p.height, p.boredom, p.sleepiness, p.dead);
 		saves.push_back(cat);
 	}
 	else if (p.breed == "Frog") {
-
+		Frog* frog = new Frog(p.name, p.hunger, p.weight, p.height, p.boredom, p.sleepiness, p.dead);
+		saves.push_back(frog);
 	}
 	else {
 		cout << p.breed << endl;

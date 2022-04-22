@@ -28,6 +28,9 @@
     <Filter Include="Source Files\Pet cpp">
       <UniqueIdentifier>{403b7a5e-d807-4eb7-a309-77ae7fa61082}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Resource Files\Frog">
+      <UniqueIdentifier>{73ae280c-4db4-4a37-a887-394ed02dd745}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -48,6 +51,9 @@
     <ClCompile Include="MiniDino.cpp">
       <Filter>Source Files\Pet cpp</Filter>
     </ClCompile>
+    <ClCompile Include="Frog.cpp">
+      <Filter>Source Files\Pet cpp</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Menu.h">
@@ -63,6 +69,9 @@
       <Filter>Header Files\Pet Headers</Filter>
     </ClInclude>
     <ClInclude Include="Pet.h">
+      <Filter>Header Files\Pet Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Frog.h">
       <Filter>Header Files\Pet Headers</Filter>
     </ClInclude>
   </ItemGroup>
@@ -114,6 +123,21 @@
     </Text>
     <Text Include="dinosaursleep3.txt">
       <Filter>Resource Files\dinosaur</Filter>
+    </Text>
+    <Text Include="frog.txt">
+      <Filter>Resource Files\Frog</Filter>
+    </Text>
+    <Text Include="frogplay.txt">
+      <Filter>Resource Files\Frog</Filter>
+    </Text>
+    <Text Include="frogsleep1.txt">
+      <Filter>Resource Files\Frog</Filter>
+    </Text>
+    <Text Include="frogsleep2.txt">
+      <Filter>Resource Files\Frog</Filter>
+    </Text>
+    <Text Include="frogsleep3.txt">
+      <Filter>Resource Files\Frog</Filter>
     </Text>
   </ItemGroup>
 </Project>

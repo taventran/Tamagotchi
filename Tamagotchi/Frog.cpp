@@ -1,61 +1,61 @@
-#include "Cat.h"
+#include "Frog.h"
 
-Cat::Cat(string name) {
-	breed = "Cat";
+Frog::Frog(string name) {
 	this->name = name;
-	hunger = 20;
+	breed = "Frog";
+	hunger = 10;
 	boredomLevels = 20;
 	maximumBoredomLevels = 100;
-	maximumHungerLevels = 100;
-	maximumSleepinessLevels = 15;
+	maximumHungerLevels = 150;
+	maximumSleepinessLevels = 10;
 	sleepiness = 0;
 	setWeightAndHeight();
 	dead = false;
 }
 
-Cat::Cat(string _n, int _h, int _w, int _he, int _b, int _s, bool _d) {
-	breed = "Cat";
+Frog::Frog(string _n, int _h, int _w, int _he, int _b, int _s, bool _d) {
+	breed = "Frog";
 	name = _n;
 	hunger = _h;
 	weight = _w;
 	height = _he;
 	boredomLevels = _b;
 	maximumBoredomLevels = 100;
-	maximumHungerLevels = 100;
-	maximumSleepinessLevels = 15;
+	maximumHungerLevels = 150;
+	maximumSleepinessLevels = 10;
 	sleepiness = _s;
 	dead = _d;
 }
 
-void Cat::setWeightAndHeight() {
+void Frog::setWeightAndHeight() {
 	srand(time(0));
-	int randWeight = rand() % 20 + 20;
-	int randHeight = rand() % 12 + 14;
+	int randWeight = rand() % 5 + 5;
+	int randHeight = rand() % 6 + 3;
 	weight = randWeight;
 	height = randHeight;
 }
 
-void Cat::displayPet() const {
-	ifstream catFile("cat.txt"); // Cat artwork found https://www.asciiart.eu/animals/cats
-	if (catFile.fail()) {
+void Frog::displayPet() const {
+	ifstream frogFile("frog.txt"); // Frog artwork found https://asciiart.website/index.php?art=animals/frogs
+	if (frogFile.fail()) {
 		cout << "Missing cat.txt file!";
 	}
 	cout << endl;
-	string catArt;
-	while (getline(catFile, catArt)) {
-		cout << catArt << endl;
+	string frogArt;
+	while (getline(frogFile, frogArt)) {
+		cout << frogArt << endl;
 	}
 	cout << endl << endl;
 }
 
-void Cat::getStats() const {
+void Frog::getStats() const {
 	cout << setfill(' ') << setw(18);
-	cout << "Cat Pet" << endl;
+	cout << "Frog Pet" << endl;
 	cout << setfill('-') << setw(28);
 	cout << "" << endl;
-	cout << name << "'s hunger: " << hunger << "/100" << endl;
+	cout << name << "'s hunger: " << hunger << "/60" << endl;
 	cout << name << "'s boredom levels: " << boredomLevels << "/100" << endl;
-	cout << name << "'s sleepiness: " << sleepiness << "/15" << endl;
+	cout << name << "'s sleepiness: " << sleepiness << "/10" << endl;
 	cout << name << "'s height: " << height << " inches " << endl;
 	cout << name << "'s weight: " << weight << " pounds " << endl;
 	cout << setfill('-') << setw(28);
@@ -64,35 +64,33 @@ void Cat::getStats() const {
 	displayPet();
 }
 
-// TODO: finish these game loop functions;
-
-void Cat::play() {
+void Frog::play() {
+	sleepiness += 3;
 	addHunger(weight);
-	sleepiness += 5;
 	system("CLS");
-	if (boredomLevels == 0) {
-		cout << name << " is already content but they'll go to hangout with their friends anyways." << endl << endl;
+	ifstream frogPlay("frogplay.txt"); // frog art found at https://www.asciiart.eu/animals/frogs by Igbeard
+	if (frogPlay.fail()) {
+		cout << "Missing frogplay.txt!" << endl;
+	}
+	string frogArt;
+	while (getline(frogPlay, frogArt)) {
+		cout << frogArt << endl;
+	}
+	if (boredomLevels = 0) {
+		cout << name << " was not bored but still roleplayed as a wizard!" << endl;
 	}
 	else if (boredomLevels < 50) {
 		boredomLevels = 0;
-		cout << name << " found some other cats to chill with at a lovely fence." << endl << endl;
+		cout << name << " roleplayed as a wizard" << endl << endl;
 	}
 	else {
 		boredomLevels -= 50;
 		cout << name << " found some other cats to chill with at a lovely fence." << endl << endl;
 	}
-	ifstream catPlayFile("catplay.txt"); // cat ascii art found at https://www.asciiart.eu/animals/cats
-	if (catPlayFile.fail()) {
-		cout << "Missing catplay.txt file!";
-	}
-	string catArt;
-	while (getline(catPlayFile, catArt)) {
-		cout << catArt << endl;
-	}
-	cout << endl << endl;
+
 }
 
-void Cat::feed() {
+void Frog::feed() {
 	sleepiness += 5;
 	boredomLevels += 20;
 	if (hunger == 0) {
@@ -109,33 +107,34 @@ void Cat::feed() {
 		cout << name << "'s current hunger: " << hunger << endl;
 	}
 }
-void Cat::sleep() {
+
+void Frog::sleep() {
 	if (sleepiness = 0) {
 		cout << name << " is not tired at all! they refuse to sleep" << endl;
 	}
 	else {
 		cout << flush;
 		system("CLS");
-		string catArt;
+		string frogArt;
 		for (int i = 0; i < 3; i++) {
 			system("CLS");
-			ifstream sleepingcatFile("catsleep.txt"); // Sleeping cat art found at https://www.asciiart.eu/animals/cats by Alex Lee.
-			ifstream sleepingcatFile2("catsleep2.txt");
-			ifstream sleepingcatFile3("catsleep3.txt");
-			while (getline(sleepingcatFile, catArt)) {
-				cout << catArt << endl;
+			ifstream sleepingfrogFile("frogsleep.txt"); // Sleeping cat art found at https://www.asciiart.eu/animals/cats by Alex Lee.
+			ifstream sleepingfrogFile2("frogsleep2.txt");
+			ifstream sleepingfrogFile3("frogsleep3.txt");
+			while (getline(sleepingfrogFile, frogArt)) {
+				cout << frogArt << endl;
 			}
 			cout << flush;
 			Sleep(700);
 			system("CLS");
-			while (getline(sleepingcatFile2, catArt)) {
-				cout << catArt << endl;
+			while (getline(sleepingfrogFile2, frogArt)) {
+				cout << frogArt << endl;
 			}
 			cout << flush;
 			Sleep(400);
 			system("CLS");
-			while (getline(sleepingcatFile3, catArt)) {
-				cout << catArt << endl;
+			while (getline(sleepingfrogFile3, frogArt)) {
+				cout << frogArt << endl;
 			}
 			cout << flush;
 			Sleep(500);

@@ -29,7 +29,8 @@ class Pet {
 		void foodAnimation();
 
 
-		void isNeglected();
+		bool isNeglected();
+		void setDead() { dead = true; }
 
 		void gone() {
 			if (boredomLevels > maximumBoredomLevels) {

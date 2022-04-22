@@ -6,7 +6,7 @@
 class MiniDino : public Pet{
 	public:
 		MiniDino(string name);
-		MiniDino(string, int, int, int, int, int);
+		MiniDino(string, int, int, int, int, int, bool);
 		void setWeightAndHeight();
 		void getStats() const;
 		void displayPet() const;

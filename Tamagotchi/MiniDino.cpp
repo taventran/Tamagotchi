@@ -13,7 +13,7 @@ MiniDino::MiniDino(string name) {
 	dead = false;
 }
 
-MiniDino::MiniDino(string _n, int _h, int _w, int _he, int _b, int _s) {
+MiniDino::MiniDino(string _n, int _h, int _w, int _he, int _b, int _s, bool _d) {
 	breed = "Mini Dino";
 	maximumBoredomLevels = 100;
 	maximumHungerLevels = 200;
@@ -24,7 +24,7 @@ MiniDino::MiniDino(string _n, int _h, int _w, int _he, int _b, int _s) {
 	height = _he;
 	boredomLevels = _b;
 	sleepiness = _s;
-	dead = false;
+	dead = _d;
 }
 
 void MiniDino::setWeightAndHeight() {
@@ -65,7 +65,6 @@ void MiniDino::getStats() const {
 	displayPet();
 }
 
-// TODO: finish these game loop functions;
 
 void MiniDino::play() {
 	sleepiness += 5;
@@ -152,7 +151,7 @@ void MiniDino::sleep() {
 		system("CLS");
 		sleepiness = 0;
 		cout << name << " is no longer tired" << endl;
-		addBoredom(40);
+		addBoredom(20);
 		addHunger(weight);
 	}
 }

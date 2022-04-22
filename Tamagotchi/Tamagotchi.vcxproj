@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Cat.cpp" />
+    <ClCompile Include="Frog.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Menu.cpp" />
     <ClCompile Include="MiniDino.cpp" />
@@ -148,6 +149,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Cat.h" />
+    <ClInclude Include="Frog.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="MiniDino.h" />
     <ClInclude Include="Pet.h" />
@@ -167,6 +169,11 @@
     <Text Include="dinosaursleep3.txt" />
     <Text Include="eatenfood.txt" />
     <Text Include="food.txt" />
+    <Text Include="frog.txt" />
+    <Text Include="frogplay.txt" />
+    <Text Include="frogsleep1.txt" />
+    <Text Include="frogsleep2.txt" />
+    <Text Include="frogsleep3.txt" />
     <Text Include="savefile.txt" />
     <Text Include="catplay.txt" />
     <Text Include="yum.txt" />

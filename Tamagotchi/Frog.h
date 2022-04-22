@@ -1,12 +1,10 @@
-#ifndef CAT_H
-#define CAT_H
-
+#pragma once
 #include "Pet.h"
 
-class Cat : public Pet {
+class Frog : public Pet {
 	public: 
-		Cat(string name);
-		Cat(string, int, int, int, int, int, bool);
+		Frog(string name);
+		Frog(string _n, int _h, int _w, int _he, int _b, int _s, bool _d);
 		void setWeightAndHeight();
 		void getStats() const;
 		void displayPet() const;
@@ -14,10 +12,4 @@ class Cat : public Pet {
 		void feed();
 		void sleep();
 
-
 };
-
-
-
-
-#endif
