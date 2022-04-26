@@ -41,7 +41,6 @@ void overWriteSaveFile(vector<Pet*>& saves, Pet* currentPet) {
 		saveFile << saves.at(i)->getHeight() << endl;
 		saveFile << saves.at(i)->getBoredomLevels() << endl;
 		saveFile << saves.at(i)->getSleepiness() << endl;
-		cout << saves.at(i)->getDead() << endl;
 		saveFile << saves.at(i)->getDead() << endl;
 		saveFile << endl;
 	}

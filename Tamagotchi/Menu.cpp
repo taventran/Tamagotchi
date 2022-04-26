@@ -160,6 +160,7 @@ void playMenu(Pet* currentPet) {
 }
 
 void graveYard(vector<Pet*>& saves) {
+	system("CLS");
 	cout << setfill(' ') << setw(21);
 	cout << "GRAVEYARD" << endl;
 	cout << setfill('|') << setw(40);
@@ -186,4 +187,5 @@ void graveYard(vector<Pet*>& saves) {
 	cout << setfill('|') << setw(40);
 	cout << " " << endl;
 	cout << endl << endl;
+	cout << "Input anything and click enter to go back to main menu" << endl;
 }
